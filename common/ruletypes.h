@@ -153,42 +153,43 @@ RULE_INT(Zone, NexusTimer, 900000) //Nexus timer in ms. Defaults to 15 minutes.
 RULE_INT(Zone, NexusScionTimer, 900000) //Nexus timer in ms. Defaults to 15 minutes.
 RULE_CATEGORY_END()
 
-RULE_CATEGORY(AlKabor)
-RULE_BOOL(AlKabor, AllowPetPull, false) // Allow Green Pet Pull (AK behavior is true)
-RULE_BOOL(AlKabor, AllowTickSplit, false) //AK behavior is true
-RULE_BOOL(AlKabor, StripBuffsOnLowHP, true) //AK behavior is true
-RULE_BOOL(AlKabor, OutOfRangeGroupXPBonus, false) //AK behavior is true. When true, players out of range of the kill will still count towards the group bonus. (They will not receive XP.)  This enables the exploit that allowed a soloing player to recieve the entire 2.6x group bonus
-RULE_BOOL(AlKabor, ClassicGroupEXPBonuses, false) // AK behavior is false.  If true, use the Clsasic to 1 month into Velious era group exp bonus. (2% for 2 members, up to 10% for 6 members)  This was the case from Launch until to Jan 2001 on PC.  False will use the Velious double bonus rules if enabled, or the post June 2003 bonus of 10% per additional member up to 80% if both Velious and Classic rules are disabled.
-RULE_BOOL(AlKabor, VeliousGroupEXPBonuses, false) // AK behavior is false.  If true, use the Velious to mid PoP era group exp bonus. (2% for 2 members, up to 20% for 6 members)  This was the case from Jan 2001 to June 2003 on PC.  (prior to that was a 6 man bonus of 10%)  False will use the post June 2003 bonus of 20% per additional member up to 80%
-RULE_BOOL(AlKabor, GroupEXPBonuses, false) //AK behavior is true. When true, the "broken" 4-6 member group bonuses will be used.  Note: ClassicGroupEXPBonuses must be false for this to work
-RULE_BOOL(AlKabor, Count6thGroupMember, true) //AK behavior is true. When true, the 6th member of the group will count towards the split, thus reducing the XP everybody gets.  Note: this should be false if using the post June 2003 PC era exp rules is intended
-RULE_BOOL(AlKabor, GreensGiveXPToGroup, true) //AK behavior is true. When true, lower level players will receive group XP when a green mob to the higher players is killed. 
-RULE_BOOL(AlKabor, GreenExpBonus, true) // AK is (supposedly) true.  When true, any group member that the mob is green to will have their weighted division split reduced to that of the highest level player who does get exp, resulting in a larger share to those who get exp from the mob.  This results in higher level players being able to powerlevel even more effectively.  no hard evidence is known of this however
-RULE_BOOL(AlKabor, AllowCharmPetRaidTanks, true) // AK behavior is true.  If false, NPCs will ignore charmed pets once MaxEntitiesCharmTanks players get on an NPC's hate list as per April 2003 patch.
-RULE_INT(AlKabor, MaxEntitiesCharmTanks, 8) // If AllowCharmPetRaidTanks is false, this is the max number of entities on an NPC's hate list before the NPC will ignore charmed pets.  April 2003 patch set this to 4 on Live.
-RULE_BOOL(AlKabor, AllowPriceIncWhileBrowsing, true) // AK behavior is true. If true, this allows Bazaar traders to increase the price of an item while another player is browsing their wares.
-RULE_INT(AlKabor, LevelCorpsesAlwaysSpawn, 55) // AK behavior is 55. The level NPC corpses will not poof even if a NPC was top hate/final blow.
-RULE_BOOL(AlKabor, NPCsSendHPUpdatesPerTic, false) // AK behavior is true. NPCs will only send HP updates every tic or when targeted instead of real time.
-RULE_BOOL(AlKabor, NoMaxWhoGuild, true) // AK behavior is false. If true, /who all guild# will return without a limit.
-RULE_BOOL(AlKabor, ServerExpBonus, true) // AK behavior is true.  This grants a multiplicative 20% experience bonus that was unique to AK
-RULE_REAL(AlKabor, LightBlueExpMod, 100.0) // Make sure they are all 100.0 for accurate experience gains.  Exp scaling by level is handled in the exp routines
-RULE_REAL(AlKabor, BlueExpMod, 100.0)
-RULE_REAL(AlKabor, WhiteExpMod, 100.0)
-RULE_REAL(AlKabor, YellowExpMod, 100.0)
-RULE_REAL(AlKabor, RedExpMod, 100.0)
-RULE_BOOL(AlKabor, RememberAir, true) //AK behavior is true. //If zoning from one underwater area to another, remember air_remaining value. If false, it's set to 100.
-RULE_BOOL(AlKabor, ClickyHateExploit, false) // AK behavior is true. When true, it allows Invis Vs Animals clicky items to generate massive hate. 
-RULE_BOOL(AlKabor, InvulnHateReduction, false) // DA spells seemed to have reduced hate on AK by an unknown amount; if true this will halve the hate
-RULE_BOOL(AlKabor, ReduceAEExp, true) // AK behavior is true.  Reduce the amount of experience gained when NPC is killed with a PBAoE spell.  Applies to NPCs around level 35 to 55
-RULE_BOOL(AlKabor, RaceEffectsAASplit, true) // AK behavior is true.  If true then race exp penalties (and bonus in case of halfling) will modify AA Exp ONLY when AA Exp is under 100%
-RULE_BOOL(AlKabor, NoDropRemoveTradeskill, true) // AK behavior is true.  If true then no drop items will be delete if container is closed.  If false, it will not delete for the original player only.
-RULE_BOOL(AlKabor, ReducedMonkAC, true) // AK behavior is true.  Monks had a low AC softcap from October 16 2002 to April 8 2003 which made them squishy.  Sony partially unnerfed them in April 03.
-RULE_BOOL(AlKabor, BlockProjectileCorners, true) // AK behavior is true.  If an NPC was in a corner, arrows and bolts would not hit them.
-RULE_BOOL(AlKabor, BlockProjectileWalls, true) // AK behavior is true.  If an NPC was walled, then arrows and bolts had to be fired from an angle parallel to the wall in order to hit them. (if this is true, corners will also block)
+RULE_CATEGORY( AlKabor )
+RULE_BOOL( AlKabor, AllowPetPull, false) // Allow Green Pet Pull (AK behavior is true)
+RULE_BOOL( AlKabor, AllowTickSplit, false) //AK behavior is true
+RULE_BOOL ( AlKabor, StripBuffsOnLowHP, true) //AK behavior is true
+RULE_BOOL ( AlKabor, OutOfRangeGroupXPBonus, false) //AK behavior is true. When true, players out of range of the kill will still count towards the group bonus. (They will not receive XP.)  This enables the exploit that allowed a soloing player to recieve the entire 2.6x group bonus
+RULE_BOOL ( AlKabor, ClassicGroupEXPBonuses, false) // AK behavior is false.  If true, use the Clsasic to 1 month into Velious era group exp bonus. (2% for 2 members, up to 10% for 6 members)  This was the case from Launch until to Jan 2001 on PC.  False will use the Velious double bonus rules if enabled, or the post June 2003 bonus of 10% per additional member up to 80% if both Velious and Classic rules are disabled.
+RULE_BOOL ( AlKabor, VeliousGroupEXPBonuses, false) // AK behavior is false.  If true, use the Velious to mid PoP era group exp bonus. (2% for 2 members, up to 20% for 6 members)  This was the case from Jan 2001 to June 2003 on PC.  (prior to that was a 6 man bonus of 10%)  False will use the post June 2003 bonus of 20% per aditional member up to 80%
+RULE_BOOL ( AlKabor, GroupEXPBonuses, false) //AK behavior is true. When true, the "broken" 4-6 member group bonuses will be used.  Note: ClassicGroupEXPBonuses must be false for this to work
+RULE_BOOL ( AlKabor, Count6thGroupMember, true) //AK behavior is true. When true, the 6th member of the group will count towards the split, thus reducing the XP everybody gets.  Note: this should be false if using the post June 2003 PC era exp rules is intended
+RULE_BOOL ( AlKabor, GreensGiveXPToGroup, true) //AK behavior is true. When true, lower level players will receive group XP when a green mob to the higher players is killed. 
+RULE_BOOL (AlKabor, GreenExpBonus, true) // AK is (supposedly) true.  When true, any group member that the mob is green to will have their weighted division split reduced to that of the highest level player who does get exp, resulting in a larger share to those who get exp from the mob.  This results in higher level players being able to powerlevel even more effectively.  no hard evidence is known of this however
+RULE_BOOL( AlKabor, AllowCharmPetRaidTanks, true) // AK behavior is true.  If false, NPCs will ignore charmed pets once MaxEntitiesCharmTanks players get on an NPC's hate list as per April 2003 patch.
+RULE_INT( AlKabor, MaxEntitiesCharmTanks, 8) // If AllowCharmPetRaidTanks is false, this is the max number of entities on an NPC's hate list before the NPC will ignore charmed pets.  April 2003 patch set this to 4 on Live.
+RULE_BOOL ( AlKabor, AllowPriceIncWhileBrowsing, true) // AK behavior is true. If true, this allows Bazaar traders to increase the price of an item while another player is browsing their wares.
+RULE_INT ( AlKabor, LevelCorpsesAlwaysSpawn, 55) // AK behavior is 55. The level NPC corpses will not poof even if a NPC was top hate/final blow.
+RULE_BOOL( AlKabor, NPCsSendHPUpdatesPerTic, false) // AK behavior is true. NPCs will only send HP updates every tic or when targeted instead of real time.
+RULE_BOOL( AlKabor, NoMaxWhoGuild, true) // AK behavior is false. If true, /who all guild# will return without a limit.
+RULE_BOOL( AlKabor, ServerExpBonus, true) // AK behavior is true.  This grants a multiplicative 20% experience bonus that was unique to AK
+RULE_REAL( AlKabor, LightBlueExpMod, 100.0) // Make sure they are all 100.0 for accurate experience gains.  Exp scaling by level is handled in the exp routines
+RULE_REAL( AlKabor, BlueExpMod, 100.0) 
+RULE_REAL( AlKabor, WhiteExpMod, 100.0)
+RULE_REAL( AlKabor, YellowExpMod, 100.0) 
+RULE_REAL( AlKabor, RedExpMod, 100.0) 
+RULE_BOOL (AlKabor, RememberAir, true) //AK behavior is true. //If zoning from one underwater area to another, remember air_remaining value. If false, it's set to 100.
+RULE_BOOL (AlKabor, ClickyHateExploit, false) // AK behavior is true. When true, it allows Invis Vs Animals clicky items to generate massive hate. 
+RULE_BOOL (AlKabor, InvulnHateReduction, false) // DA spells seemed to have reduced hate on AK by an unknown amount; if true this will halve the hate
+RULE_BOOL (AlKabor, ReduceAEExp, true) // AK behavior is true.  Reduce the amount of experience gained when NPC is killed with a PBAoE spell.  Applies to NPCs around level 35 to 55
+RULE_BOOL (AlKabor, RaceEffectsAASplit, true) // AK behavior is true.  If true then race exp penalties (and bonus in case of halfling) will modify AA Exp ONLY when AA Exp is under 100%
+RULE_BOOL (AlKabor, NoDropRemoveTradeskill, true) // AK behavior is true.  If true then no drop items will be delete if container is closed.  If false, it will not delete for the original player only.
+RULE_BOOL (AlKabor, ReducedMonkAC, true) // AK behavior is true.  Monks had a low AC softcap from October 16 2002 to April 8 2003 which made them squishy.  Sony partially unnerfed them in April 03.
+RULE_BOOL (AlKabor, BlockProjectileCorners, true) // AK behavior is true.  If an NPC was in a corner, arrows and bolts would not hit them.
+RULE_BOOL (AlKabor, BlockProjectileWalls, true) // AK behavior is true.  If an NPC was walled, then arrows and bolts had to be fired from an angle parallel to the wall in order to hit them. (if this is true, corners will also block)
 RULE_BOOL(AlKabor, EnableMobLevelModifier, true) // AK behavior is true.  If true, enable the September 4 & 6 2002 patch exp modifications that granted a large experience bonus to kills within +/-5 levels of the player for level 51+ players
 RULE_BOOL(AlKabor, EnableEraItemRules, false) // AK behavior is false. If true, disable item data in the era they did not exist in.
 RULE_BOOL(AlKabor, EnableLuclinHarmonyResistOverride, true) // AK behavior is true. If true, enable the late Luclin Harmony resist override.
 RULE_BOOL(AlKabor, EnableLatePlanesHarmonyNerf, true) // AK behavior is true. If true, enable the late Planes of Power Harmony nerf
+RULE_BOOL (AlKabor, GreenmistHack, true) // Greenmist recourse didn't work on AK.  The spell data is messed up so it's not properly fixable without modifying the client.  This enables a partial workaround that is not AKurate but provides some benefit to players using this weapon.
 RULE_CATEGORY_END()
 
 
