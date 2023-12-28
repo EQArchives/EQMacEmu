@@ -141,6 +141,9 @@ void handle_npc_waypoint(QuestInterface *parse, lua_State* L, NPC* npc, Mob *ini
 
 	lua_pushinteger(L, std::stoi(sep.arg[0]));
 	lua_setfield(L, -2, "wp");
+
+	lua_pushinteger(L, std::stoi(sep.arg[1]));
+	lua_setfield(L, -2, "gridid");
 }
 
 void handle_npc_hate(QuestInterface *parse, lua_State* L, NPC* npc, Mob *init, std::string data, uint32 extra_data,

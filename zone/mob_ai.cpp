@@ -2284,8 +2284,8 @@ void NPC::AI_DoMovement() {
 						}
 					}
 					//kick off event_waypoint arrive
-					char temp[16];
-					sprintf(temp, "%d", cur_wp);
+					char temp[32] = { 0 };
+					snprintf(temp, 31, "%d %d", cur_wp, gridno);
 					parse->EventNPC(EVENT_WAYPOINT_ARRIVE, CastToNPC(), nullptr, temp, 0);
 					if (!AIwalking_timer->Enabled()) {
 						AI_SetupNextWaypoint();
