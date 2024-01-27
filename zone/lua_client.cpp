@@ -1461,7 +1461,7 @@ luabind::scope lua_register_client() {
 		.def("IsSelfFound", (int(Lua_Client::*)(void))&Lua_Client::IsSelfFound)
 		.def("SetSoloOnly", (void(Lua_Client::*)(int))&Lua_Client::SetSoloOnly)
 		.def("IsSoloOnly", (int(Lua_Client::*)(void))&Lua_Client::IsSoloOnly)
-		.def("ClearPlayerInfoAndGrantStartingItems", (void(Lua_Client::*)(void))&Lua_Client::ClearPlayerInfoAndGrantStartingItems);
+		.def("ClearPlayerInfoAndGrantStartingItems", (void(Lua_Client::*)(void))&Lua_Client::ClearPlayerInfoAndGrantStartingItems)
 		.def("ScribeSpells", (uint16(Lua_Client::*)(uint8, uint8))& Lua_Client::ScribeSpells);
 }
 
