@@ -192,6 +192,10 @@ RULE_BOOL(AlKabor, EnableLatePlanesHarmonyNerf, true) // AK behavior is true. If
 RULE_BOOL (AlKabor, GreenmistHack, true) // Greenmist recourse didn't work on AK.  The spell data is messed up so it's not properly fixable without modifying the client.  This enables a partial workaround that is not AKurate but provides some benefit to players using this weapon.
 RULE_CATEGORY_END()
 
+RULE_CATEGORY(EQA)
+RULE_BOOL(EQA, EnableClassicPetExperienceSplit, true) // Accurate from Classic Launch until Luclin. Enables pet taking 50% experience if a solo player's pet deals more than 50% damage to a target out of all contributing damage.
+RULE_CATEGORY_END()
+
 
 RULE_CATEGORY(Quarm)
 RULE_BOOL(Quarm, EnableQuakes, true) // Quarm default is true. If false, disable the auto-quake system.
@@ -221,7 +225,6 @@ RULE_BOOL(Quarm, PreLuclinDiseaseCounterAggro, true)
 RULE_INT(Quarm, RespawnReductionNewbiePullLimit, 4)
 RULE_INT(Quarm, RespawnReductionStandardPullLimit, 15)
 RULE_INT(Quarm, RespawnReductionDungeonPullLimit, 15)
-RULE_BOOL(Quarm, EnablePetExperienceSplit, true) // Accurate from Classic Launch until Luclin. Enables pet experience weights in groups (or 50% if solo) if a single pet deals more than 50% damage to a target out of all contributing damage.
 RULE_BOOL(Quarm, EnableChecksumEnforcement, true) // Enables or disables the dll checksum enforcement.
 RULE_INT(Quarm, GuildFTELockoutTimeMS, 300000)
 RULE_BOOL(Quarm, VeliousEraAggroCaps, false) // Use Velious Era Aggro 

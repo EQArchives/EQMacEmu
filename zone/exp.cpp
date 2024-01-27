@@ -237,7 +237,7 @@ void Client::AddEXP(uint32 in_add_exp, uint8 conlevel, Mob* killed_mob, int16 av
 			add_exp *= reduction_mult;
 		}
 	}
-	if (RuleB(Quarm, EnablePetExperienceSplit))
+	if (RuleB(EQA, EnableClassicPetExperienceSplit))
 	{
 		if (killed_mob && !HasGroup() && !is_split)
 		{
@@ -979,29 +979,6 @@ bool Group::ProcessGroupSplit(Mob* killed_mob, struct GroupExpSplit_Struct& gs, 
 						gs.weighted_levels += cmember->GetLevel();
 					}
 					Log(Logs::Detail, Logs::Group, "%s was added to close_membercount", cmember->GetName());
-				}
-			}
-		}
-	}
-
-	if (RuleB(Quarm, EnablePetExperienceSplit))
-	{
-		if (killed_mob)
-		{
-			int32 damage_amount = 0;
-			Mob* top_damager = killed_mob->GetDamageTopSingleMob(damage_amount);
-			if (top_damager)
-			{
-				if (top_damager->IsPet())
-				{
-					float pet_dmg_pct = static_cast<float>(damage_amount) / killed_mob->total_damage;
-					if (pet_dmg_pct > 0.5f)
-					{
-						++gs.membercount;
-						++gs.close_membercount;
-						gs.weighted_levels += top_damager->GetLevel();
-						Log(Logs::General, Logs::EQMac, "%s was damaged more than 50 percent by a single pet. Pet was added to group experience weights.", killed_mob->GetCleanName());
-					}
 				}
 			}
 		}
