@@ -31,7 +31,6 @@ extern LoginServer server;
 Client::Client(std::shared_ptr<EQStreamInterface> c, ClientVersion v)
 {
 	connection = c;
-	macversion = pc;
 	version = v;
 	status = cs_not_sent_session_ready;
 	account_id = 0;
